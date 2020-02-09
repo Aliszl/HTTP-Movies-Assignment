@@ -67,7 +67,7 @@ app.post("/api/movies", (req, res) => {
   if (req.body.title !== undefined) {
     const newMovie = req.body;
     newMovie["id"] = movieId;
-    movies.push(newMovie);
+    movies.unshift(newMovie);
   }
   ++movieId;
   res.status(201).json(movies);
